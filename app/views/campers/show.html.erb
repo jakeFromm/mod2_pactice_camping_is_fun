@@ -2,7 +2,7 @@
 <h3>Age: <%= @camper.age %></h3>
 <h3>Acvities:</h3>
 <ul>
-<% @camper.activities.each do |activity| %>
-<li><%= link_to activity.name, activity_path(activity) %></li>
+<% @camper.signups.each do |signup| %>
+<li><%= link_to signup.activity.name, activity_path(signup.activity) %> at <%= signup.time%>:00</li>
 <% end %>
 </ul>
