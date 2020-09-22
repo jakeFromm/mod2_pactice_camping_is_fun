@@ -1,0 +1,20 @@
+<h1>Signup Page</h1>
+
+<% if flash[:messages] %>
+    <ol>
+        <%= flash[:messages].each do |message| %>
+        <li style="color:red"><%= message %></li>
+        <% end %>
+    </ol>
+<% end %>
+
+<%= form_for @signup do |f| %>
+   <%= f.collection_select :camper_id, Camper.all, :id, :name, {prompt: "Select Camper"} %>
+   <br>
+   <%= f.collection_select :activity_id, Activity.all, :id, :name, {prompt: "Select Activity"} %>
+   <br>
+   <%= f.label :time %>
+   <%= f.number_field :time %>
+   <br>
+ <%= f.submit "Submit" %>
+<%end%>
