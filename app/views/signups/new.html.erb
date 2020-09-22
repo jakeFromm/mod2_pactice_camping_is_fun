@@ -1,11 +1,12 @@
 <h1>Signup Page</h1>
 
 <% if flash[:messages] %>
-    <ol>
-        <%= flash[:messages].each do |message| %>
+<%flash[:messages].each do |message| %>
+    <ul>
         <li style="color:red"><%= message %></li>
-        <% end %>
-    </ol>
+    </ul>
+    <% end %>
+<br>
 <% end %>
 
 <%= form_for @signup do |f| %>

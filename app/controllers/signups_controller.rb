@@ -13,7 +13,7 @@ class SignupsController < ApplicationController
         redirect_to camper_path(signup.camper)
     else
         flash[:messages] = signup.errors.full_messages
-        render :new
+        redirect_to new_signup_path
     end
   end
 
